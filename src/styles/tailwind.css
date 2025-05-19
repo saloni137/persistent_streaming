@@ -1,0 +1,127 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* Google Fonts Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* Custom CSS Variables */
+:root {
+    /* Primary Colors */
+    --color-primary-50: #ECEDFB; /* indigo-50 */
+    --color-primary-100: #D9DBF8; /* indigo-100 */
+    --color-primary-200: #B3B7F0; /* indigo-200 */
+    --color-primary-300: #8D93E9; /* indigo-300 */
+    --color-primary-400: #676FE1; /* indigo-400 */
+    --color-primary-500: #4F46E5; /* indigo-500 */
+    --color-primary-600: #2921DA; /* indigo-600 */
+    --color-primary-700: #4338CA; /* indigo-700 */
+    --color-primary-800: #191386; /* indigo-800 */
+    --color-primary-900: #110C5C; /* indigo-900 */
+    
+    /* Neutral Colors */
+    --color-background: #FFFFFF; /* white */
+    --color-surface: #F9FAFB; /* gray-50 */
+    --color-border: #E5E7EB; /* gray-200 */
+    --color-text-primary: #111827; /* gray-900 */
+    --color-text-secondary: #4B5563; /* gray-600 */
+    --color-text-tertiary: #9CA3AF; /* gray-400 */
+    
+    /* Semantic Colors */
+    --color-success: #059669; /* emerald-600 */
+    --color-warning: #F59E0B; /* amber-500 */
+    --color-error: #E11D48; /* rose-600 */
+    --color-info: #2563EB; /* blue-600 */
+    --color-processing: #7C3AED; /* violet-600 */
+    
+    /* Processing Colors */
+    --color-processing-50: #F3EEFE; /* violet-50 */
+    --color-processing-100: #E8DDFC; /* violet-100 */
+    --color-processing-200: #D1BBF9; /* violet-200 */
+    --color-processing-300: #BA99F6; /* violet-300 */
+    --color-processing-400: #A377F3; /* violet-400 */
+    --color-processing-500: #7C3AED; /* violet-500 */
+    --color-processing-600: #621AE4; /* violet-600 */
+    --color-processing-700: #5015B7; /* violet-700 */
+    --color-processing-800: #3D108A; /* violet-800 */
+    --color-processing-900: #2A0B5D; /* violet-900 */
+}
+
+/* Custom Animation Classes */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+    from { transform: translateX(-100%); }
+    to { transform: translateX(0); }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.6; }
+    50% { opacity: 1; }
+    100% { opacity: 0.6; }
+}
+
+.animate-fade-in {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.animate-fade-out {
+    animation: fadeOut 0.3s ease-in-out;
+}
+
+.animate-slide-in-right {
+    animation: slideInRight 0.4s ease-out;
+}
+
+.animate-slide-in-left {
+    animation: slideInLeft 0.4s ease-out;
+}
+
+.animate-pulse-custom {
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+/* Custom Component Classes */
+@layer components {
+    .btn {
+        @apply inline-flex items-center justify-center rounded-md font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-500 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50;
+    }
+
+    .btn-primary {
+        @apply bg-primary-500 text-white hover:bg-primary-700;
+    }
+
+    .btn-secondary {
+        @apply bg-white text-text-primary border border-border hover:bg-surface;
+    }
+
+    .btn-tertiary {
+        @apply text-primary-500 hover:bg-primary-100;
+    }
+
+    .btn-danger {
+        @apply bg-error text-white hover:bg-rose-700;
+    }
+
+    .input-base {
+        @apply block w-full rounded-md border border-border bg-white px-3 py-2 text-text-primary shadow-sm placeholder:text-text-tertiary focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500 disabled:cursor-not-allowed disabled:opacity-50;
+    }
+
+    .card {
+        @apply rounded-lg border border-border bg-white shadow-sm;
+    }
+}
